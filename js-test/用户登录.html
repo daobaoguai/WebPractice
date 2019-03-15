@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	/*写出以下程序：
+         首先接收用户输入的用户名，判断该用户名是否是admin,如果不是直接程序终止，如果是那么再次提示让用户输入密码,如果密码是88888,那么提示登录成功，否则提示登录失败。*/
+	
+	var s1=prompt("Input your name: ");
+	if(s1=="admin"){
+		var s2=prompt("Input password");
+		s2=parseInt(s2);
+		if (s2==88888) {
+			alert("success")
+		} else {
+			alert("failed");
+		}
+	}else {
+		alert("defeat");
+	}
+</script>
+</html>

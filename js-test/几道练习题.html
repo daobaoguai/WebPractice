@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	/*1、将1到100之间的所有是3的倍数找出来，在控制台中输出*/
+	
+	// var n1=1;
+	// while(n1<=100){
+	// 	if (n1%3==0) {
+	// 		console.log(n1);//该数是3的倍数
+	// 	}
+	// 	n1++;
+	// }
+
+	
+	// 2：求1到100之间的数字和。在控制台中输出
+
+	// var n1=1;
+	// var sum=0;
+	// while(n1<=100){
+	// 	sum+=n1;
+	// 	n1++;
+	// }
+	// console.log(sum);
+
+
+
+	/* 3：首先接收用户输入用户名和密码，只要用户名不是admin或者密码不是888就一直提示要求重新输入,如果正确则提登录成功.*/
+
+	// var username=prompt("Input your name: ");
+	// var password=prompt("Input password");
+	// while(username!="admin" || password!="888"){
+	// 	alert("您的用户名或密码不正确，请重新输入");
+	// 	 username=prompt("Input your name: ");
+	//  	 password=prompt("Input password");
+
+	//  	 if (username=="admin" && password=="888") {
+	//  	 	alert("登陆成功");
+	//  	 } else {
+	//  	 	alert("登录失败");
+	//  	 };
+	// }
+
+
+	/*4:亲，请将1到50中所有的奇数找出来，并在控制台中输出！*/
+
+	// var n1=1;
+	// while(n1<=50){
+	// 	if (n1%2==0) {
+	// 		//不做任何事情
+	// 	} else {
+	// 		console.log(n1);//将奇数在控制台打印出来
+	// 	}
+	// 	n1++;
+	// }
+
+
+ 	/* 5：随机产生一个数字0到9之间，并且接收用户输入的一个数字，   用户有3次输入的机会，如果3次机会内猜对则提示赢得游戏，直接跳出游戏。如果3都没有猜对，输掉游戏，并结束游戏。*/
+
+ 	var n1=Math.floor(Math.random()*10);
+ 	alert("ε=(´ο｀*)))，不小心泄露天机了呢："+n1);
+ 	var n2=parseInt(prompt("输入一个0-9的数字"));
+ 	var i=1;
+ 	while(i<=2){
+ 		if(n2!=n1){
+ 			alert("抱歉，您猜错了哦");
+ 			n2=parseInt(prompt("输入一个0-9的数字"));
+ 		}else{
+ 			alert("恭喜，您猜对了QAQ");
+ 			i=3;
+
+ 		}
+ 		i++;
+ 	}
+ 	if (n2==n1) {
+ 		alert("成功，您的幸运值MAX")
+ 	} else {
+ 		alert("失败，游戏结束！本次的幸运数值是： "+n1);}
+ 	
+
+</script>
+</html>

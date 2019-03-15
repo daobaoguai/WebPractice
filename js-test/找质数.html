@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	/*找出1-100之间所有的质数*/
+	
+
+	var flag=0;                   //运用标识符
+	for(var i=1;i<=100;i++){  //获取被除数
+
+		for(var j=2;j<i;j++){  //获取当前数的除数
+			if(i%j==0){
+				flag=1;
+				break;
+			}else{
+				flag=0;
+			}
+		}
+
+		if (flag==0 && i!=1) {
+			console.log(i);
+		}
+
+		// if (i==j) {
+		// 	console.log(i);
+		// } 
+	}
+</script>
+</html>
