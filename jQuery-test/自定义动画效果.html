@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("div").css({
+				"display":"none",
+				"height" : "200px",
+				"width":"300px",
+				"background":"gold",
+				"margin-top":"10px"
+			});
+
+			$("input[type='button']").click(function(){
+
+				// 可带一个、两个、三个参数，要注意其区别
+
+		    //  两个参数的时候
+            //  第一个参数是：动画执行的时长
+            //  第二个参数是：动画执行完毕后要执行的函数
+
+            //三个参数的时候
+            //第一个参数是：动画执行的时长
+            //第二个参数是：动画效果
+            //第三个参数是动画执行完毕后要执行的函数
+
+            //  $(".divItem:first").slideDown(2000,"linear",function(){});
+
+              //swing是一个先慢后快的效果
+              //$(".divItem:last").slideDown(2000,"swing",function(){});
+
+
+				//下拉方式展示
+				// $(".divItem").slideDown(2000);
+				$(".divItem").slideDown(2000);
+
+			});
+			//上拉0
+			$("button").eq(0).click(function(){
+
+				$(".divItem").slideUp(3000);
+			});
+			//上拉下拉切换1
+			$("button").eq(1).click(function(){
+
+				$(".divItem").slideToggle(5000);
+			});
+
+
+
+		 	//淡入淡出演示
+          $("button").eq(2).click(function(){
+             //淡入2
+            $(".divItem").fadeIn(2000);
+          });
+
+          $("button").eq(3).click(function(){
+             //淡出3
+            $(".divItem").fadeOut(2000);
+          });
+
+           $("button").eq(4).click(function(){
+             //淡入淡出切换4
+            $(".divItem").fadeToggle(2000);
+          }); 
+
+           //设置不透明度；fadeTo5
+          $("button").eq(5).click(function(){         
+            $(".divItem").fadeTo(2000,0.5);
+          });  
+
+          //自定义动画 6
+          $("button").eq(6).click(function(){         
+              $(".divItem").animate({
+                  "width"   :"500px",
+                  "height"  : "600px",
+                  "opacity" : 1
+
+              },2000);
+          });  
+
+		});
+	</script>
+</head>
+<body>
+	<!-- <button>下拉</button> -->
+	<input type="button" value="下拉"/>
+	<button>上拉0</button>
+	<button>上拉下拉切换1</button>
+	<button>淡入2</button>
+	<button>淡出3</button>
+	<button>淡入淡出切换4</button>
+	<button>设置不透明度5</button>
+	<button>自定义动画6</button>
+	<div class="divItem"></div>
+	<div class="divItem"></div>
+
+</body>
+</html>

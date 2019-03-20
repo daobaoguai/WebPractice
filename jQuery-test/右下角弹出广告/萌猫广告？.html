@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .ad {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 200px;
+            background-image: url("萌猫-01.jpg");
+            /*background: red;*/
+            /*top:0;*/
+            display: none;
+        }
+        .ad span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 18px;
+            background-image: url("h.jpg");
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //当bottom=0时，以底边为参照，上拉效果相当于top=0时的下拉效果，也就是把屏幕倒过来看
+            $(".ad")
+                    .slideDown(3000)
+                    .slideUp("slow")
+                    .fadeIn(2000)
+                    .children("span").click(function () {
+                        $(this).parent().fadeOut();
+                    });
+        });
+    </script>
+</head>
+<body>
+    <div class="ad">
+        <span></span>
+    </div>
+</body>
+</html>

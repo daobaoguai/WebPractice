@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        ul{list-style: none;}
+        img{display: block; border:0;}
+        .wrapper{
+            width: 752px;  border:1px solid #ccc;
+            padding: 10px 0 0 10px;
+            font-family: arial;
+            overflow: hidden;
+            margin:100px auto;
+
+        }
+        .wrapper li{
+            float: left;
+            margin:0 10px 10px 0;
+            width: 178px;
+            height: 125px;
+            overflow: hidden;
+            position: relative;
+        }
+        .wrapper li div,.wrapper li p{    /*两个标签的存在是为了：一个让背景透明，一个让字不透明*/
+            width:178px;
+            height: 25px;
+            position: absolute;   /*绝对定位，两个层叠在一起*/
+            font-size:14px;
+            text-align: center;
+            line-height: 25px;
+            color:white;
+            left:0;
+            bottom:-25px;
+            _bottom:-26px;
+        }
+        .wrapper li div{
+            background-color:#000;
+        }
+        .wrapper li p{
+            background: url(images/bg.png) no-repeat 5px 0;
+        }
+
+    </style>
+    <script type="text/javascript" src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">        
+        // $(document).ready(function(){
+        //     $("wrapper li")
+        //         .append("<div></div>")
+        //         .children("div")
+        //         .fadeTo(500,0.5)
+        //         .next("p")
+        //         .each(function(index,ele){
+        //             var y=index*25;
+        //             $(ele).css("background-position","5px -"+y+"px")
+        //         })
+        //         .parent()
+        //         .mouseenter(function(){
+        //             $(this).children("div,p").stop().animate({
+        //                 "bottom":0
+        //             },400);
+        //         })
+        //         .mouseleave(function(){
+        //             $(this).children("div,p").stop().animate({
+        //                 "bottom":"-25px"
+        //             },400);
+        //         });
+        // });
+
+
+        $(function(){
+            var div = $("<div></div>"),speed = 400,$p = $(".wrapper p");
+            $p.before(div);
+            $(".wrapper div").fadeTo(0,0.5);
+
+            $p.each(function(index,ele){   //遍历操作                
+                $(ele).css("background-position","5px -" + index * 25 + "px");
+            });
+
+            $(".wrapper li").hover(function(){
+                $(this).children("div,p").stop().animate({"bottom":0},speed);
+            },function(){
+                $(this).children("div,p").stop().animate({"bottom":-26},speed);
+            });
+            //一个模仿悬停事件（鼠标移动到一个对象上面及移出这个对象）的方法。这是一个自定义的方法，它为频繁使用的任务提供了一种“保持在其中”的状态。
+
+            // 当鼠标移动到一个匹配的元素上面时，会触发指定的第一个函数。当鼠标移出这个元素时，会触发指定的第二个函数。而且，会伴随着对鼠标是否仍然处在特定元素中的检测（例如，处在div中的图像），如果是，则会继续保持“悬停”状态，而不触发移出事件（修正了使用mouseout事件的一个常见错误）。
+
+
+        });
+    </script>
+
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li><a href="###"><img src="images/01.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="###"><img src="images/02.jpg" alt=""/></a><p>便宜好货，就上淘宝</p></li>
+        <li><a href="###"><img src="images/03.jpg" alt=""/></a><p>一入新浪，知天下事</p></li>
+        <li><a href="###"><img src="images/04.jpg" alt=""/></a><p>网易养猪场</p></li>
+        <li><a href="###"><img src="images/05.jpg" alt=""/></a><p>搜狐的滋味，你尝过没</p></li>
+        <li><a href="###"><img src="images/06.jpg" alt=""/></a><p>用薪创造快乐</p></li>
+        <li><a href="###"><img src="images/07.jpg" alt=""/></a><p>想看什么，就来优酷</p></li>
+        <li><a href="###"><img src="images/08.jpg" alt=""/></a><p>上京东，福利多多</p></li>
+    </ul>
+</div>
+</body>
+</html>

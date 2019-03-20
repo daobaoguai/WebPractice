@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("div").css({
+				"display":"none",
+				"height" : "200px",
+				"width":"300px",
+				"background":"gold"
+			});
+
+			$("button").eq(0).click(function(){
+				
+				// $("div").show(1000);  //毫秒为单位
+
+				$("div").show(1000,function(){
+					$("div").hide(3000);
+			});
+
+			});
+
+			$("button").eq(1).click(function(){
+				$("div").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<button>显示</button>
+	<button>隐藏</button>
+	<div></div>
+
+</body>
+</html>

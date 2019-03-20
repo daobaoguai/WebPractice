@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $("button").click(function(){
+			// 	alert("click事件");
+			// }).mouseenter(function(){
+			// 	console.log("mouseenter事件");
+			// });
+
+			//bind可绑定多个事件
+			// $("button").bind("click mouseenter",function(){
+			// 	console.log("两个事件");
+			// });
+			// //绑定两个事件，分别实现不同效果
+			// $("button").bind({
+			// 	"click":function(){
+			// 		alert("click事件");
+			// 	},
+			// 	"mouseenter":function(){
+			// 		console.log("mouseenter事件");
+			// 	}
+			// });
+
+			//one事件只触发一次
+			// $("button").one("click",function(){
+				// alert("click事件只触发一次");
+			// });
+
+			// 	$("li").bind("click",function(){
+			// 		alert($(this).html());
+			// 	});
+			
+			//delegate(委派)绑定方式
+			// $("ul").delegate("li","click",function(){
+			// 	alert($(this).html());
+			// });
+
+			//on   先事件后选择具体元素
+			// 强烈推荐使用
+			// $("ul").on("click","li",function(){
+			// 	alert($(this).html());
+			// });
+
+			$("div").on("click","h3:eq(1)",function(){
+				alert($(this).html());
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+	<button>绑定两个事件的按钮</button>
+	<div>
+		<p>我是p元素</p>
+		<h3>我是h3元素</h3>
+		<h3>我是h3元素</h3>
+	</div>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+		<li>我是第4个li</li>
+		<li>我是第5个li</li>
+		<li>我是第6个li</li>
+		<li>我是第7个li</li>
+		<li>我是第8个li</li>
+		<li>我是第9个li</li>
+		<li>我是第10个li</li>
+	</ul>
+
+</body>
+</html>

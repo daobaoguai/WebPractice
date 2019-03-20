@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+
+		$("div").on("click mouseenter","h3",function(){
+			alert($(this).html());
+
+		$("div").off("click");
+
+		});
+	});
+	</script>
+</head>
+<body>
+	<button>绑定两个事件的按钮</button>
+	<div>
+		<p>我是p元素</p>
+		<h3>我是h3元素</h3>
+		<h4>我是h4元素</h4>
+	</div>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+		<li>我是第4个li</li>
+		<li>我是第5个li</li>
+		<li>我是第6个li</li>
+		<li>我是第7个li</li>
+		<li>我是第8个li</li>
+		<li>我是第9个li</li>
+		<li>我是第10个li</li>
+	</ul>
+
+</body>
+</html>
