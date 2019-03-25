@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".link").on("click",function(e){
+				//取消默认操作
+				e.preventDefault();
+				//阻止事件冒泡
+				e.stopPropagation();
+			});
+
+			// $(".link").click();
+
+			$(".box").on("click",function(){
+				alert("父盒子div被点击了");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<a href="http://www.daobaoguai.xyz" class="link">盗宝怪的空间</a>
+	</div>
+
+</body>
+</html>

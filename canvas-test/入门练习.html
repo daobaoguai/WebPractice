@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>canvas入门</title>
+	
+</head>
+<body>
+	<canvas id="demo" width="600" height="600">
+		IE 9 以上才支持canvas
+		你的浏览器不支持canvas，请升级浏览器
+		<!-- flash -->
+	</canvas>
+
+	<script>
+		//第一步：拿到canvas的标签
+		var canvas=document.getElementById("demo");
+		//第二部：拿到canvas上下文
+		var ctx=canvas.getContext("2d");
+		//绘制
+		ctx.moveTo(100, 100);
+		ctx.lineTo(200, 100);
+		ctx.lineTo(100, 200);
+
+		// ctx.lineTo(100, 100);
+		ctx.closePath();//闭合路径
+
+		//设置线宽
+		ctx.lineWidth=4;
+		//设置描边的样式
+		ctx.strokeStyle="red";		
+		//描边
+		ctx.stroke();
+		//填充
+		ctx.fillStyle="green";
+		ctx.fill();
+	</script>
+</body>
+</html>

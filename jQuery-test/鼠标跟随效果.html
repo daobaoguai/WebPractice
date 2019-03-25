@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(document).on("mousemove",function(e){
+				$("img").css({
+					"position":"absolute",
+					"top":e.pageY,
+					"left":e.pageX
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="../mytest/萌猫/萌猫-02.jpg"/>
+
+</body>
+</html>

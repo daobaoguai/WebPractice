@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>基于状态的绘图</title>
+
+</head>
+<body>
+	<div id="container">
+		<canvas id="cavsElem">
+			你的浏览器不支持canvas，请升级浏览器
+		</canvas>
+	</div>
+
+	<script>
+		(function(){
+			var canvas=document.querySelector("#cavsElem");
+			var ctx = canvas.getContext("2d");
+
+			canvas.width = 600;
+			canvas.height = 600;
+			canvas.style.border = "1px solid #000";
+
+			ctx.strokeStyle="red";
+			ctx.lineWidth=20;
+
+			ctx.moveTo(100, 100);
+			ctx.lineTo(300, 100);
+
+			ctx.stroke();
+
+			ctx.beginPath();//开启新状态的绘图， 
+			ctx.strokeStyle="green";
+			ctx.moveTo(100, 200);
+			ctx.lineTo(300, 200);
+			ctx.stroke();
+
+		}());
+	</script>
+</body>
+</html>
