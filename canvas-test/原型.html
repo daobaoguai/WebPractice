@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+<body>
+	<script>
+
+	function One(){
+		}
+	function Two(){
+		}
+	function Three(){
+		}
+
+	Two.prototype=new One();
+	Three.prototype=new Two();
+	var three=new Three();
+
+	console.log(three);//three{}
+	console.log(three.__proto__===Three.prototype); //true
+	console.log(three.__proto__.__proto__===Two.prototype); //true
+	console.log(three.__proto__.__proto__.__proto__===One.prototype);  //true
+	console.log(three.__proto__.__proto__.__proto__.__proto__===Object.prototype); //true
+	console.log(three.__proto__.__proto__.__proto__.__proto__.__proto__===null);  //true
+
+	console.log(Object.__proto__ === Function.prototype);//true
+	console.log(Function.__proto__===Function.prototype);//true
+	console.log(Object.__proto__===Function.__proto__);//true
+
+	console.log(Object.__proto__===Object.prototype);//false
+	console.log(Function.__proto__===Object.prototype);//false
+
+	console.log(Object.prototype);
+	console.log(Function.prototype.__proto__===Object.prototype);//true
+	console.log(Object.prototype.__proto__);//null	
+	console.log(Function.prototype.__proto__.__proto__);//null
+
+</script>
+</body>
+</html>

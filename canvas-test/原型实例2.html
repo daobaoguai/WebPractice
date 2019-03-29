@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+<body>
+<script>
+	// function Father(){
+    //  Code goes here
+    // }
+    // var obj1 = new Father();    //  此时，
+
+    // Father.prototype = {
+    //     name:"hhhhh",
+    //     last:"wwwww",
+    //     sayName:function(){
+    //         alert(this.name);
+    //     }
+    // }
+    // obj1.sayName();// error
+                   // 因为，构造函数的prototype属性被重写了，js的对象都是不相等的
+
+
+
+    function Father(){
+    //  Code goes here
+    }
+       
+    Father.prototype = {
+        name:"hhhhh",
+        last:"wwwww",
+        sayName:function(){
+            alert(this.name);
+        }
+    }
+
+
+    var obj1 = new Father(); //  若是在这里定义就不会出错,先修改prototype，在让实例对象的__proto__指向它
+
+    obj1.sayName(); // error
+                   // 因为，构造函数的prototype属性被重写了，js的对象都是不相等的
+</script>
+</body>
+</html>

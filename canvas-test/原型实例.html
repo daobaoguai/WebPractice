@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+<body>
+<script type="text/javascript">
+
+function Person(name, age){ 
+   this.name = name; 
+   this.age = age; 
+  } 
+
+Person.prototype.MaxNumber = 9999;
+Person.__proto__.MinNumber = -9999;
+var will = new Person("Will", 28); 
+
+console.log(will.MaxNumber); // 9999 
+console.log(will.MinNumber); // undefined 
+
+console.log(Person.__proto__);//
+console.log(Person.__proto__===Function.prototype);//
+console.log(Person.__proto__===Person.prototype);//false
+console.log(will.constructor===Person.prototype.constructor);//true
+console.log(will.__proto__.constructor===Person.prototype.constructor);//true
+console.log(this.__proto__===Person.prototype);//false
+console.log(this===Person.prototype);//false
+console.log(will.__proto__===Person.prototype);//true
+console.log(Person.prototype.constructor===Person);//true
+</script>
+
+</body>
+</html>
